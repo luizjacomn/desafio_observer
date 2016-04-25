@@ -1,0 +1,14 @@
+<pedidos>
+<pedido>
+	<descricao>Sabonete</descricao>
+	<valor>1.0</valor>
+</pedido>
+<pedido>
+	<descricao>Shampoo Anticaspa</descricao>
+	<valor>10.5</valor>
+</pedido>
+<pedido>
+	<descricao>Creme Dental</descricao>
+	<valor>2.3</valor>
+</pedido>
+</pedidos>
