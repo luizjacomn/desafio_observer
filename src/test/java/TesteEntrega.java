@@ -9,7 +9,7 @@ public class TesteEntrega {
 		Notificador notificador = new NotificadorPedidos();
 		new EntregaListener(notificador);
 		new FinanceiroListener(notificador);
-		PedidosRepository pedidosRepository = new PedidosRepository("../src/main/resources/novos-pedidos.xml");
+		PedidosRepository pedidosRepository = new PedidosRepository();
 		notificador.novosPedidos(pedidosRepository.getPedidos());
 	}
 }

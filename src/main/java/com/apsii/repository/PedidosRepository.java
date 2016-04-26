@@ -1,6 +1,5 @@
 package com.apsii.repository;
 
-import java.io.File;
 import java.util.List;
 
 import com.apsii.model.Pedido;
@@ -8,11 +7,9 @@ import com.thoughtworks.xstream.XStream;
 
 public class PedidosRepository {
 	private XStream leitor;
-	private String caminho;
 	private List<Pedido> pedidos;
 
-	public PedidosRepository(String caminho) {
-		this.caminho = caminho;
+	public PedidosRepository() {
 		initLeitorXML();
 		pedidosXMLParaLista();
 	}
@@ -23,8 +20,9 @@ public class PedidosRepository {
 		leitor.alias("pedido", Pedido.class);
 	}
 
+	@SuppressWarnings("unchecked")
 	private void pedidosXMLParaLista() {
-		pedidos = (List<Pedido>) leitor.fromXML(new File(caminho).getAbsolutePath());
+		pedidos = (List<Pedido>) leitor.fromXML(getClass().getResource("/novos-pedidos.xml"));
 	}
 
 	public List<Pedido> getPedidos() {
